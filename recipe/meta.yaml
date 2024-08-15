@@ -14,12 +14,14 @@ build:
     - st-theme = streamlit_theme:print_version
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
-  skip: true  # [py<=38]
+  skip: true  # [s390x or py<=38]
 
 requirements:
   host:
     - python
     - pip
+    - wheel
+    - setuptools
   run:
     - python
     - streamlit >=1.33
@@ -36,9 +38,16 @@ test:
 about:
   home: https://github.com/gabrieltempass/streamlit-theme
   summary: A component that returns the active theme of the Streamlit app.
+  description: |
+    The function immediately returns the active theme, 
+    when it is called. If the user manually changes the theme, 
+    after the web app is already running, it updates the returned value.
   license: MIT
   license_file: LICENSE
+  license_family: MIT
+  dev_url: https://github.com/gabrieltempass/streamlit-theme/
+  doc_url: https://github.com/gabrieltempass/streamlit-theme/blob/main/README.md
 
 extra:
   recipe-maintainers:
-    - AddYourGitHubIdHere
+    - psteyer
