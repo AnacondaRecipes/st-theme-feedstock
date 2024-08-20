@@ -14,7 +14,7 @@ build:
     - st-theme = streamlit_theme:print_version
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
-  skip: true  # [s390x or py<=38]
+  skip: true  # [s390x or py<38]
 
 requirements:
   host:
