@@ -10,11 +10,11 @@ source:
   sha256: ca97aece1a48ded6e83fd742c27cb0851e1bce2100ab4b6c37c7b6e003b65b42
 
 build:
+  number: 1
   entry_points:
     - st-theme = streamlit_theme:print_version
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
-  skip: true  # [s390x or py<38]
+  skip: true  # [py<38]
 
 requirements:
   host:
